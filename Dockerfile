@@ -14,6 +14,11 @@ RUN apt-get update -y \
 
 RUN groupadd -g 1000 coingroup \
     && useradd -u 1000 -g coingroup -m coinuser \
+    && mkdir -p "${COIN_ROOT_DIR}" \
+    && mkdir -p "${COIN_RESOURCES}" \
+    && mkdir -p "${COIN_WALLETS}" \
+    && mkdir -p "${COIN_LOGS}" \
+    && mkdir -p "${COIN_SCRIPTS}" \
     && chown -R coinuser:coingroup "${COIN_ROOT_DIR}/"
 
 VOLUME [ "$COIN_ROOT_DIR" ]
