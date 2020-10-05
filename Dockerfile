@@ -13,7 +13,7 @@ RUN apt-get update -y \
     && apt-get clean
 
 RUN groupadd -g 1000 coingroup \
-    && useradd -u 1000 -g coinuser -m coinuser \
+    && useradd -u 1000 -g coingroup -m coinuser \
     && chown -R coinuser:coingroup "${COIN_ROOT_DIR}/"
 
 VOLUME [ "$COIN_ROOT_DIR" ]
