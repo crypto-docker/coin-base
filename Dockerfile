@@ -21,6 +21,8 @@ RUN groupadd -g 1000 coingroup \
     && mkdir -p "${COIN_SCRIPTS}" \
     && chown -R coinuser:coingroup "${COIN_ROOT_DIR}/"
 
+WORKDIR "${COIN_ROOT_DIR}"
+
 VOLUME [ "$COIN_ROOT_DIR" ]
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "bash" ]
