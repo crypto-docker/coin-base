@@ -24,5 +24,5 @@ RUN groupadd -g 1000 coingroup \
 WORKDIR "${COIN_ROOT_DIR}"
 
 VOLUME [ "$COIN_ROOT_DIR" ]
-ENTRYPOINT [ "/entrypoint.sh" ]
+
 CMD [ "bash" ]
